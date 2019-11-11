@@ -8,7 +8,7 @@ namespace DatabaseService.Services
 {
     public interface IHistoryService
     {
-        bool Add(AnnotationsDto annotationObject);
+        bool Add(History history);
         History Get(int historyId);
         bool Delete(int historyId);
         bool HistoryExist(int id);

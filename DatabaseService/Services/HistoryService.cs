@@ -1,20 +1,21 @@
+using System.Linq;
 using DatabaseService.Modules;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseService.Services
 {
     public class HistoryService : IHistoryService
     {
-        
         AppContext database;
 
         public HistoryService()
         {
             database = new AppContext();
         }
-        
-        public bool Add(AnnotationsDto annotationObject)
+
+        public bool Add(History history)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public History Get(int historyId)
@@ -41,6 +42,5 @@ namespace DatabaseService.Services
             var result = database.History.Find(historyId);
             return result != null;
         }
-        
     }
 }
