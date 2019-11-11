@@ -26,8 +26,8 @@ namespace DatabaseService.Services
         {
             if (HistoryExist(historyId))
             {
-                var appUser = database.AppUser.Find(historyId);
-                database.AppUser.Remove(appUser);
+                var history = database.History.Find(historyId);
+                database.History.Remove(history);
 
                 var result = database.SaveChanges();
                 return result > 0;
