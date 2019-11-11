@@ -76,7 +76,7 @@ namespace WebService.Controllers.Authentication
 
         }
 
-        private bool IsInvalidPassword(SignupUserDto dto, AppUsers user)
+        private bool IsInvalidPassword(SignupUserDto dto, AppUser user)
         {
             int.TryParse(
                _configuration.GetSection("Auth:PwdSize").Value,
@@ -89,7 +89,7 @@ namespace WebService.Controllers.Authentication
             }
             return false;
         }
-        private string GenerateToken(AppUsers user)
+        private string GenerateToken(AppUser user)
         {
 
             var tokenHandler = new JwtSecurityTokenHandler();

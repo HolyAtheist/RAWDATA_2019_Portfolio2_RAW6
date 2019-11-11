@@ -2,7 +2,7 @@ using System.Net.Sockets;
 
 namespace DatabaseService.Modules
 {
-    public class AppUsers
+    public class AppUser
     {
         public int Id { get; set; }
         public string Username { get; set; }

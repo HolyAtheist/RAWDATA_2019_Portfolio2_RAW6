@@ -8,27 +8,27 @@ namespace DatabaseService.Services.Authentication
 {
     public class AuthUsersService : IAuthUsersService
     {
-        public AppUsers GetUserByUserName(string username)
+        public AppUser GetUserByUserName(string username)
         {
             using var DB = new AppContext();
-            var user = DB.AppUsers.Where(u => u.Username == username)
+            var user = DB.AppUser.Where(u => u.Username == username)
                                   .FirstOrDefault();
 
 
             return user;
         }
 
-        public AppUsers CreateUser(string username, string password, string salt)
+        public AppUser CreateUser(string username, string password, string salt)
             //
         {
-            var user = new AppUsers()
+            var user = new AppUser()
             {
                Username = username,
                Password = password,
                Salt = salt
             };
             using var DB = new AppContext();
-            DB.AppUsers.Add(user);
+            DB.AppUser.Add(user);
             DB.SaveChanges();
 
             var newlyAddedUser = GetUserByUserName(user.Username);

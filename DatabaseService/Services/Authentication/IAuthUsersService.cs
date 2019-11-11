@@ -7,7 +7,7 @@ namespace DatabaseService.Services
 {
     public interface IAuthUsersService
     {
-        AppUsers GetUserByUserName(string username);
-        AppUsers CreateUser(string username, string password, string salt);
+        AppUser GetUserByUserName(string username);
+        AppUser CreateUser(string username, string password, string salt);
     }
 }
